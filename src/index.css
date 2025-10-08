@@ -23,3 +23,15 @@
 .delay-300 {
     animation-delay: 0.3s;
 }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .7s ease, transform .7s ease;
+    will-change: opacity, transform;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}

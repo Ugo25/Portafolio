@@ -17,6 +17,22 @@ export default function App() {
     { label: "Contacto", href: "#contacto" },
   ];
 
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100 font-sans">
       {/* NAVBAR */}
@@ -80,8 +96,11 @@ export default function App() {
 
         <div className="relative mx-auto max-w-6xl px-4 py-10 md:py-20 grid md:grid-cols-2 gap-10 items-center">
           {/* Texto */}
-          <div className="animate-fade-up">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
+          <div className="space-y-5">
+            <h1
+              className="reveal text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight"
+              style={{ transitionDelay: "0ms" }}
+            >
               Desarrollador Web & Móvil • Estudiante TI
               <span className="block mt-2">
                 <span className="text-emerald-400">Rumbo a CCNA → </span>
@@ -89,13 +108,19 @@ export default function App() {
               </span>
             </h1>
 
-            <p className="mt-5 text-neutral-300 max-w-prose text-base md:text-lg">
+            <p
+              className="reveal mt-0 text-neutral-300 max-w-prose text-base md:text-lg"
+              style={{ transitionDelay: "120ms" }}
+            >
               Construyo interfaces claras y herramientas útiles. Me especializo en
               <b> HTML/CSS</b> y <b>Android (Kotlin)</b>, con base en <b>C</b>, <b>C++</b> y <b>Java</b>.
               Profundizando en redes Cisco y ciberseguridad ofensiva.
             </p>
 
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+            <div
+              className="reveal mt-0 flex flex-col sm:flex-row gap-3"
+              style={{ transitionDelay: "240ms" }}
+            >
               <a
                 href="#proyectos"
                 className="inline-flex justify-center rounded-xl border border-emerald-500/60 text-emerald-300 hover:bg-emerald-500/10 px-4 py-2"
@@ -110,8 +135,10 @@ export default function App() {
               </a>
             </div>
 
-            {/* Redes */}
-            <div className="mt-6 flex gap-4 text-neutral-300">
+            <div
+              className="reveal mt-0 flex gap-4 text-neutral-300"
+              style={{ transitionDelay: "360ms" }}
+            >
               <IconLink href="https://github.com/Ugo25" label="GitHub">
                 <GitHubIcon className="w-6 h-6" />
               </IconLink>
@@ -123,6 +150,7 @@ export default function App() {
               </IconLink>
             </div>
           </div>
+
 
           {/* Imagen + Skills */}
           <div className="md:order-none order-last flex flex-col items-center justify-center gap-6 text-center">
@@ -157,17 +185,54 @@ export default function App() {
 
       {/* SOBRE MI */}
       <section id="sobre" className="mx-auto max-w-6xl px-4 py-12 md:py-16 scroll-mt-24">
-        <h2 className="text-xl md:text-2xl font-bold">Sobre mí</h2>
-        <p className="mt-3 md:mt-4 text-neutral-300 max-w-3xl text-base md:text-lg">
+        <h2
+          className="reveal text-xl md:text-2xl font-bold"
+          style={{ transitionDelay: "0ms" }}
+        >
+          Sobre mí
+        </h2>
+
+        <p
+          className="reveal mt-3 md:mt-4 text-neutral-300 max-w-3xl text-base md:text-lg"
+          style={{ transitionDelay: "120ms" }}
+        >
           Soy estudiante de Ingeniería en TI. Me gusta crear proyectos funcionales y bien
           diseñados, y llevar el conocimiento de desarrollo al mundo de las redes y la
           seguridad para construir herramientas de automatización y auditoría.
         </p>
+
+        {/* Opcional: 3 highlights rápidos con stagger */}
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {[
+            ["Dev Web & Móvil", "HTML/CSS, React, Android (Kotlin)"],
+            ["Base sólida", "C, C++, Java"],
+            ["Enfocado a redes", "Rumbo a CCNA y Red Team"],
+          ].map(([title, desc], i) => (
+            <div
+              key={title}
+              className="reveal rounded-2xl border border-neutral-800 bg-neutral-900/60 p-4"
+              style={{ transitionDelay: `${200 + i * 120}ms` }}
+            >
+              <div className="text-sm font-semibold">{title}</div>
+              <div className="text-xs text-neutral-400 mt-1">{desc}</div>
+            </div>
+          ))}
+        </div>
       </section>
+
 
       {/* SKILLS */}
       <section id="skills" className="mx-auto max-w-6xl px-4 py-12 md:py-16 scroll-mt-24">
-        <h2 className="text-xl md:text-2xl font-bold">Skills</h2>
+        <h2 className="reveal text-xl md:text-2xl font-bold" style={{ transitionDelay: "0ms" }}>
+          Skills
+        </h2>
+        <div
+          className="reveal mt-3 text-neutral-300 text-base md:text-lg"
+          style={{ transitionDelay: "120ms" }}
+        >
+          Tecnologías y lenguajes con los que trabajo actualmente:
+        </div>
+
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             ["HTML", "Avanzado"],
@@ -178,10 +243,11 @@ export default function App() {
             ["C++", "Intermedio"],
             ["Redes (CCNA)", "En curso"],
             ["Wireshark", "En curso"],
-          ].map(([name, level]) => (
+          ].map(([name, level], i) => (
             <div
               key={name}
-              className="rounded-2xl border border-neutral-800 p-4 bg-neutral-900/60"
+              className="reveal rounded-2xl border border-neutral-800 p-4 bg-neutral-900/60"
+              style={{ transitionDelay: `${i * 100}ms` }} // ← retraso suave entre tarjetas
             >
               <div className="text-xs md:text-sm text-neutral-400">{level}</div>
               <div className="text-lg font-semibold">{name}</div>
@@ -213,13 +279,14 @@ export default function App() {
               desc: "Landing con fondo animado y estructura modular.",
               link: "https://github.com/Ugo25/CenaduriaChayito",
             },
-          ].map((p) => (
+          ].map((p, i) => (
             <a
               key={p.title}
               href={p.link}
               target="_blank"
               rel="noreferrer"
-              className="group rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 hover:border-emerald-600 transition shadow-sm block"
+              className="reveal group rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 hover:border-emerald-600 transition shadow-sm block"
+              style={{ transitionDelay: `${i * 120}ms` }}
             >
               <div className="flex items-center gap-2 text-neutral-300 text-sm">
                 <GlobeIcon className="w-4 h-4" />
@@ -233,34 +300,87 @@ export default function App() {
           ))}
         </div>
       </section>
+      <section id="certificaciones" className="mx-auto max-w-6xl px-4 py-12 md:py-16 scroll-mt-24">
+        <h2 className="text-xl md:text-2xl font-bold text-center md:text-left">
+          Certificaciones Cisco
+        </h2>
+        <p className="mt-3 text-neutral-300 text-sm md:text-base text-center md:text-left">
+          Acreditaciones obtenidas a través de Cisco Networking Academy y Credly.
+        </p>
+
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
+          {[
+            {
+              title: "CCNA: Switching, Routing, and Wireless Essentials",
+              img: "/src/assets/badges/CCNA.png",
+              url: "https://www.credly.com/badges/07a42402-760d-4310-b4ea-39a0354d6169/public_url",
+              issuer: "Cisco",
+              date: "Abr 1, 2025",
+            },
+            {
+              title: "CCNA: Introduction to Networks",
+              img: "/src/assets/badges/Introredes.png",
+              url: "https://www.credly.com/badges/856b0349-bbff-4697-83e9-a33d35cebf56/public_url",
+              issuer: "Cisco",
+              date: "Dic 7, 2024",
+            },
+            {
+              title: "Network Technician Career Path",
+              img: "/src/assets/badges/carreraentecnico.png",
+              url: "https://www.credly.com/badges/62802231-51ee-4ffc-8d02-e8432af3ccb9/public_url",
+              issuer: "Cisco",
+              date: "Abr 21, 2025",
+            },
+            {
+              title: "Networking Academy Learn-A-Thon 2025",
+              img: "/src/assets/badges/netgames.png",
+              url: "https://www.credly.com/badges/5d386eca-b7d5-488d-b5d3-a76bc1bbc02d/public_url",
+              issuer: "Cisco",
+              date: "Jun 27, 2025",
+            },
+          ].map((b, i) => (
+            <a
+              key={b.title}
+              href={b.url}
+              target="_blank"
+              rel="noreferrer"
+              className="reveal group rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 hover:border-emerald-600 transition shadow-sm w-full max-w-[230px]"
+              style={{ transitionDelay: `${i * 10}ms` }} // <- pequeña demora entre tarjetas
+            >
+              <img
+                src={b.img}
+                alt={b.title}
+                className="w-28 h-28 mx-auto object-contain drop-shadow-md group-hover:scale-[1.05] transition"
+              />
+              <div className="mt-3 text-center">
+                <div className="text-sm font-semibold text-neutral-100 line-clamp-2">
+                  {b.title}
+                </div>
+                <div className="text-xs text-neutral-400 mt-1">{b.issuer}</div>
+                <div className="text-xs text-neutral-500">{b.date}</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
 
       {/* CONTACTO */}
       <section id="contacto" className="mx-auto max-w-6xl px-4 py-12 md:py-16 scroll-mt-24">
-        <h2 className="text-xl md:text-2xl font-bold">Contacto</h2>
-        <p className="mt-3 text-neutral-300">
+        <h2 className="reveal text-xl md:text-2xl font-bold">Contacto</h2>
+        <p className="reveal mt-3 text-neutral-300">
           ¿Colaboramos? Escríbeme y con gusto platicamos del proyecto.
         </p>
-        <div className="mt-6 flex flex-col sm:flex-row gap-3 text-neutral-300">
-          <a
-            href="mailto:hugoacosta7911@gmail.com"
-            className="px-4 py-2 rounded-xl border border-neutral-700 hover:bg-neutral-800 flex items-center gap-2 justify-center"
-          >
-            <MailIcon className="w-4 h-4" />
-            Email
+
+        <div className="reveal mt-6 flex flex-col sm:flex-row gap-3 text-neutral-300">
+          <a href="mailto:hugoacosta7911@gmail.com" className="px-4 py-2 rounded-xl border border-neutral-700 hover:bg-neutral-800 flex items-center gap-2 justify-center">
+            <MailIcon className="w-4 h-4" /> Email
           </a>
-          <a
-            href="https://github.com/Ugo25"
-            className="px-4 py-2 rounded-xl border border-neutral-700 hover:bg-neutral-800 flex items-center gap-2 justify-center"
-          >
-            <GitHubIcon className="w-4 h-4" />
-            GitHub
+          <a href="https://github.com/Ugo25" className="px-4 py-2 rounded-xl border border-neutral-700 hover:bg-neutral-800 flex items-center gap-2 justify-center">
+            <GitHubIcon className="w-4 h-4" /> GitHub
           </a>
-          <a
-            href="https://www.linkedin.com/in/tu-perfil"
-            className="px-4 py-2 rounded-xl border border-neutral-700 hover:bg-neutral-800 flex items-center gap-2 justify-center"
-          >
-            <LinkedInIcon className="w-4 h-4" />
-            LinkedIn
+          <a href="https://www.linkedin.com/in/tu-perfil" className="px-4 py-2 rounded-xl border border-neutral-700 hover:bg-neutral-800 flex items-center gap-2 justify-center">
+            <LinkedInIcon className="w-4 h-4" /> LinkedIn
           </a>
         </div>
       </section>
