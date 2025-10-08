@@ -201,9 +201,9 @@ export default function App() {
           className="reveal mt-3 md:mt-4 text-neutral-300 max-w-3xl text-base md:text-lg"
           style={{ transitionDelay: "120ms" }}
         >
-          Soy estudiante de Ingeniería en TI. Me gusta crear proyectos funcionales y bien
-          diseñados, y llevar el conocimiento de desarrollo al mundo de las redes y la
-          seguridad para construir herramientas de automatización y auditoría.
+          Apasionado por la tecnología y el aprendizaje continuo.
+          Me gusta crear proyectos que combinen diseño, funcionalidad y propósito.
+          Estoy enfocado en crecer como desarrollador y fortalecer mis habilidades en redes y seguridad informática.
         </p>
 
         {/* Opcional: 3 highlights rápidos con stagger */}
@@ -252,8 +252,7 @@ export default function App() {
             <div
               key={name}
               className="reveal rounded-2xl border border-neutral-800 p-4 bg-neutral-900/60"
-              style={{ transitionDelay: `${i * 100}ms` }} // ← retraso suave entre tarjetas
-            >
+              style={{ transitionDelay: `${i * 100}ms` }}>
               <div className="text-xs md:text-sm text-neutral-400">{level}</div>
               <div className="text-lg font-semibold">{name}</div>
             </div>
@@ -315,7 +314,7 @@ export default function App() {
           Certificaciones Cisco
         </h2>
         <p className="mt-3 text-neutral-300 text-sm md:text-base text-center md:text-left">
-          Acreditaciones obtenidas a través de Cisco Networking Academy y Credly.
+          Acreditaciones obtenidas a través de Cisco Networking Academy
         </p>
 
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
@@ -379,7 +378,7 @@ export default function App() {
       <section id="contacto" className="mx-auto max-w-6xl px-4 py-12 md:py-16 scroll-mt-24">
         <h2 className="reveal text-xl md:text-2xl font-bold">Contacto</h2>
         <p className="reveal mt-3 text-neutral-300">
-          ¿Colaboramos? Escríbeme y con gusto platicamos del proyecto.
+          Contáctame en mis redes Sociales
         </p>
 
         <div className="reveal mt-6 flex flex-col sm:flex-row gap-3 text-neutral-300">
