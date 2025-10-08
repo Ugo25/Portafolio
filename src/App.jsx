@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import fotoPerfil from "./assets/foto-perfil.jpg"; // 🔹 tu imagen
+import fotoPerfil from "./assets/foto-perfil.jpg";
+import badgeSwitching from "./assets/badges/CCNA.png";
+import badgeIntro from "./assets/badges/Introredes.png";
+import badgeCareer from "./assets/badges/carreraentecnico.png";
+import badgeLearnathon from "./assets/badges/netgames.png";
+
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -300,7 +305,12 @@ export default function App() {
           ))}
         </div>
       </section>
-      <section id="certificaciones" className="mx-auto max-w-6xl px-4 py-12 md:py-16 scroll-mt-24">
+
+      {/* CERTIFICACIONES */}
+      <section
+        id="certificaciones"
+        className="mx-auto max-w-6xl px-4 py-12 md:py-16 scroll-mt-24"
+      >
         <h2 className="text-xl md:text-2xl font-bold text-center md:text-left">
           Certificaciones Cisco
         </h2>
@@ -312,28 +322,28 @@ export default function App() {
           {[
             {
               title: "CCNA: Switching, Routing, and Wireless Essentials",
-              img: "/src/assets/badges/CCNA.png",
+              img: badgeSwitching,
               url: "https://www.credly.com/badges/07a42402-760d-4310-b4ea-39a0354d6169/public_url",
               issuer: "Cisco",
               date: "Abr 1, 2025",
             },
             {
               title: "CCNA: Introduction to Networks",
-              img: "/src/assets/badges/Introredes.png",
+              img: badgeIntro,
               url: "https://www.credly.com/badges/856b0349-bbff-4697-83e9-a33d35cebf56/public_url",
               issuer: "Cisco",
               date: "Dic 7, 2024",
             },
             {
               title: "Network Technician Career Path",
-              img: "/src/assets/badges/carreraentecnico.png",
+              img: badgeCareer,
               url: "https://www.credly.com/badges/62802231-51ee-4ffc-8d02-e8432af3ccb9/public_url",
               issuer: "Cisco",
               date: "Abr 21, 2025",
             },
             {
               title: "Networking Academy Learn-A-Thon 2025",
-              img: "/src/assets/badges/netgames.png",
+              img: badgeLearnathon,
               url: "https://www.credly.com/badges/5d386eca-b7d5-488d-b5d3-a76bc1bbc02d/public_url",
               issuer: "Cisco",
               date: "Jun 27, 2025",
@@ -345,7 +355,7 @@ export default function App() {
               target="_blank"
               rel="noreferrer"
               className="reveal group rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 hover:border-emerald-600 transition shadow-sm w-full max-w-[230px]"
-              style={{ transitionDelay: `${i * 10}ms` }} // <- pequeña demora entre tarjetas
+              style={{ transitionDelay: `${i * 10}ms` }}
             >
               <img
                 src={b.img}
