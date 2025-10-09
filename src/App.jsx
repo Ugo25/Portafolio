@@ -228,37 +228,43 @@ export default function App() {
 
       {/* SKILLS */}
       <section id="skills" className="mx-auto max-w-6xl px-4 py-12 md:py-16 scroll-mt-24">
-        <h2 className="reveal text-xl md:text-2xl font-bold" style={{ transitionDelay: "0ms" }}>
-          Skills
-        </h2>
-        <div
-          className="reveal mt-3 text-neutral-300 text-base md:text-lg"
-          style={{ transitionDelay: "120ms" }}
-        >
+        <h2 className="text-xl md:text-2xl font-bold">Skills</h2>
+        <p className="mt-3 text-neutral-300 text-base md:text-lg">
           Tecnologías y lenguajes con los que trabajo actualmente:
+        </p>
+
+        {/* Avanzado */}
+        <div className="mt-8">
+          <h3 className="text-lg font-semibold text-emerald-400 mb-3">Avanzado</h3>
+          <div className="grid grid-cols-1 gap-4 w-full md:w-1/2">
+            {["HTML", "CSS"].map(skill => (
+              <SkillCard key={skill} name={skill} level="Avanzado" />
+            ))}
+          </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            ["HTML", "Avanzado"],
-            ["CSS", "Avanzado"],
-            ["Kotlin (Android)", "Intermedio"],
-            ["Java", "Intermedio"],
-            ["C", "Intermedio"],
-            ["C++", "Intermedio"],
-            ["Redes (CCNA)", "En curso"],
-            ["Wireshark", "En curso"],
-          ].map(([name, level], i) => (
-            <div
-              key={name}
-              className="reveal rounded-2xl border border-neutral-800 p-4 bg-neutral-900/60"
-              style={{ transitionDelay: `${i * 100}ms` }}>
-              <div className="text-xs md:text-sm text-neutral-400">{level}</div>
-              <div className="text-lg font-semibold">{name}</div>
-            </div>
-          ))}
+        {/* Intermedio */}
+        <div className="mt-10">
+          <h3 className="text-lg font-semibold text-yellow-400 mb-3">Intermedio</h3>
+          <div className="grid grid-cols-1 gap-4 w-full md:w-1/2">
+            {["Kotlin (Android)", "Java", "C", "C++"].map(skill => (
+              <SkillCard key={skill} name={skill} level="Intermedio" />
+            ))}
+          </div>
+        </div>
+
+        {/* En curso */}
+        <div className="mt-10">
+          <h3 className="text-lg font-semibold text-blue-400 mb-3">En curso</h3>
+          <div className="grid grid-cols-1 gap-4 w-full md:w-1/2">
+            {["Redes (CCNA)", "Wireshark"].map(skill => (
+              <SkillCard key={skill} name={skill} level="En curso" />
+            ))}
+          </div>
         </div>
       </section>
+
+
 
       {/* PROYECTOS */}
       <section id="proyectos" className="mx-auto max-w-6xl px-4 py-12 md:py-16 scroll-mt-24">
@@ -416,6 +422,14 @@ function IconLink({ href, label, children }) {
     <a href={href} aria-label={label} className="hover:text-white" target="_blank" rel="noreferrer">
       {children}
     </a>
+  );
+}
+function SkillCard({ name, level }) {
+  return (
+    <div className="rounded-2xl border border-neutral-800 p-4 bg-neutral-900/60">
+      <div className="text-xs md:text-sm text-neutral-400">{level}</div>
+      <div className="text-lg font-semibold">{name}</div>
+    </div>
   );
 }
 
