@@ -257,7 +257,7 @@ export default function App() {
         <div className="mt-10">
           <h3 className="text-lg font-semibold text-blue-400 mb-3">En curso</h3>
           <div className="grid grid-cols-1 gap-4 w-full md:w-1/2">
-            {["Redes (CCNA)", "Wireshark"].map(skill => (
+            {["Redes (CCNA)", "Pentester"].map(skill => (
               <SkillCard key={skill} name={skill} level="En curso" />
             ))}
           </div>
