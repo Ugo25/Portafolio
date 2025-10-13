@@ -147,6 +147,9 @@ export default function App() {
               <IconLink href="https://github.com/Ugo25" label="GitHub">
                 <GitHubIcon className="w-6 h-6" />
               </IconLink>
+              <IconLink href="https://gitlab.com/Ugo25" label="GitLab">
+                <GitLabIcon className="w-6 h-6" />
+              </IconLink>
               <IconLink href="mailto:hugoacosta7911@gmail.com" label="Email">
                 <MailIcon className="w-6 h-6" />
               </IconLink>
@@ -394,10 +397,14 @@ export default function App() {
           <a href="https://github.com/Ugo25" className="px-4 py-2 rounded-xl border border-neutral-700 hover:bg-neutral-800 flex items-center gap-2 justify-center">
             <GitHubIcon className="w-4 h-4" /> GitHub
           </a>
+          <a href="https://gitlab.com/Ugo25" className="px-4 py-2 rounded-xl border border-neutral-700 hover:bg-neutral-800 flex items-center gap-2 justify-center">
+            <GitLabIcon className="w-4 h-4" /> Gitlab
+          </a>
           <a href="https://www.linkedin.com/in/tu-perfil" className="px-4 py-2 rounded-xl border border-neutral-700 hover:bg-neutral-800 flex items-center gap-2 justify-center">
             <LinkedInIcon className="w-4 h-4" /> LinkedIn
           </a>
         </div>
+
       </section>
 
       <footer className="border-t border-neutral-800 py-8 text-center text-neutral-500 text-xs md:text-sm">
@@ -442,4 +449,5 @@ function MailIcon(props) { return (<svg viewBox="0 0 24 24" fill="currentColor" 
 function InstagramIcon(props) { return (<svg viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5-2.2a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6Z" /></svg>); }
 function LinkedInIcon(props) { return (<svg viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5 2.5 2.5 0 0 1 4.98 3.5ZM.5 8.5h4.95V24H.5V8.5Zm7.5 0h4.74v2.1h.07c.66-1.25 2.28-2.57 4.7-2.57 5.02 0 5.94 3.3 5.94 7.6V24h-4.95v-6.9c0-1.65-.03-3.78-2.3-3.78-2.3 0-2.65 1.79-2.65 3.65V24H8V8.5Z" /></svg>); }
 function GlobeIcon(props) { return (<svg viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2Zm7.93 9h-3.2a15.7 15.7 0 0 0-1.03-5.06 8 8 0 0 1 4.23 5.06ZM12 4c.93 1.2 2.18 3.64 2.5 7H9.5c.32-3.36 1.57-5.8 2.5-7ZM6.3 6.94A15.7 15.7 0 0 0 5.27 11h-3.2a8 8 0 0 1 4.23-5.06Zm-4.23 6.06h3.2c.23 1.81.73 3.57 1.46 5.06A8 8 0 0 1 2.07 13ZM12 20c-.93-1.2-2.18-3.64-2.5-7h5c-.32 3.36-1.57 5.8-2.5 7Zm3.7-2.94c.73-1.49 1.23-3.25 1.46-5.06h3.2a8 8 0 0 1-4.23 5.06Z" /></svg>); }
+function GitLabIcon(props) { return (<svg viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M22.65 14.39l-1.12-3.45-1.08-3.23a.8.8 0 0 0-1.5 0l-1.07 3.23H6.12L5.05 7.71a.8.8 0 0 0-1.5 0L2.47 10.94l-1.12 3.45c-.3.92.03 1.94.82 2.52L12 23.5l9.82-6.59c.79-.58 1.12-1.6.83-2.52Z" /></svg>); }
 function CodeIcon(props) { return (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6" /></svg>); }
