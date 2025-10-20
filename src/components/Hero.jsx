@@ -51,13 +51,13 @@ export default function Hero() {
                         <img
                             src={fotoPerfil}
                             alt="Hugo Acosta"
-                            className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-60 md:h-60 rounded-full object-cover border-4 border-neutral-800 shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/30 transition duration-500 select-none"
+                            className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-60 md:h-60 rounded-full object-cover border-4 border-neutral-800 shadow-lg shadow-emerald-500/10 group-hover:shadow-emerald-500/30 transition duration-500 select-none"
                             loading="lazy"
                             decoding="async"
                             width="240"
                             height="240"
-                            draggable="false"
-                            onContextMenu={(e) => e.preventDefault()}
+                            draggable="false"                         // 🚫 impide arrastrar
+                            onContextMenu={(e) => e.preventDefault()} // 🚫 bloquea clic derecho directo
                         />
                     </div>
 
