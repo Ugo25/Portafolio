@@ -1,0 +1,16 @@
+{
+    "advanced": [
+        "HTML",
+        "CSS"
+    ],
+    "intermediate": [
+        "Kotlin (Android)",
+        "Java",
+        "C",
+        "C++"
+    ],
+    "inProgress": [
+        "Redes (CCNA)",
+        "Pentester"
+    ]
+}
