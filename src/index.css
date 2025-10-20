@@ -35,3 +35,10 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+img.protected {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}

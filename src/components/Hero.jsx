@@ -1,7 +1,7 @@
 import fotoPerfil from "../assets/foto-perfil.jpg";
 import Badge from "./ui/badge";
 import IconLink from "./ui/IconLink";
-import { GitHubIcon, GitLabIcon, MailIcon, InstagramIcon } from "./ui/icons";
+import { GitHubIcon, GitLabIcon, MailIcon } from "./ui/icons";
 
 
 export default function Hero() {
@@ -39,7 +39,6 @@ export default function Hero() {
                         <IconLink href="https://github.com/Ugo25" label="GitHub"><GitHubIcon className="w-6 h-6" /></IconLink>
                         <IconLink href="https://gitlab.com/Ugo25" label="GitLab"><GitLabIcon className="w-6 h-6" /></IconLink>
                         <IconLink href="mailto:hugoacosta7911@gmail.com" label="Email"><MailIcon className="w-6 h-6" /></IconLink>
-                        <IconLink href="https://www.instagram.com/Ugowaos" label="Instagram"><InstagramIcon className="w-6 h-6" /></IconLink>
                     </div>
                 </div>
 
@@ -49,7 +48,17 @@ export default function Hero() {
                     {/* Imagen con animación */}
                     <div className="relative animate-fade-up delay-150">
                         <div className="absolute -inset-1 bg-emerald-500/20 blur-2xl rounded-full" />
-                        <img src={fotoPerfil} alt="Hugo Acosta" className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-60 md:h-60 rounded-full object-cover border-4 border-neutral-800 shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/30 transition duration-500" />
+                        <img
+                            src={fotoPerfil}
+                            alt="Hugo Acosta"
+                            className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-60 md:h-60 rounded-full object-cover border-4 border-neutral-800 shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/30 transition duration-500 select-none"
+                            loading="lazy"
+                            decoding="async"
+                            width="240"
+                            height="240"
+                            draggable="false"
+                            onContextMenu={(e) => e.preventDefault()}
+                        />
                     </div>
 
 
