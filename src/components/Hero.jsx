@@ -1,5 +1,5 @@
 import fotoPerfil from "../assets/foto-perfil.jpg";
-import Badge from "./ui/badge";
+import Badge from "./ui/Badge";
 import IconLink from "./ui/IconLink";
 import { GitHubIcon, GitLabIcon, MailIcon } from "./ui/icons";
 
