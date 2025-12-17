@@ -65,7 +65,7 @@ export default function Hero() {
                     </h1>
                     <h2 className="text-xl md:text-2xl mt-4 text-neutral-400 font-normal">
                         Full Stack Developer <span className="text-neutral-600 px-2">/</span> 
-                        <span className="text-emerald-500 font-mono">Future Red Team</span>
+                        <span className="text-emerald-500 font-mono">Futuro Red Team</span>
                     </h2>
                 </div>
 

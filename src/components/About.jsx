@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Terminal } from 'lucide-react';
 
-// ✅ OPTIMIZACIÓN: Importamos los componentes en lugar de escribirlos abajo
+
 import { Typewriter, Cursor } from './Typewriter';
 
 export default function About() {

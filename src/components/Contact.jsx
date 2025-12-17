@@ -26,12 +26,12 @@ export default function Contact() {
         <div className="space-y-6">
           {/* Título */}
           <h2 className="reveal text-3xl md:text-4xl font-bold text-white" style={{ transitionDelay: "100ms" }}>
-            Contacta <span className="text-emerald-500">Me</span>
+            Contáctame
           </h2>
           
           {/* Descripción */}
           <p className="reveal text-neutral-400 leading-relaxed text-sm md:text-base" style={{ transitionDelay: "200ms" }}>
-            Actualmente estoy disponible para colaboraciones en desarrollo y seguridad, vulnerabilidades o proyectos, Contactame.
+            Actualmente estoy disponible para colaboraciones en desarrollo y seguridad, vulnerabilidades o proyectos, Contáctame.
           </p>
 
           {/* Indicador de Estado */}
