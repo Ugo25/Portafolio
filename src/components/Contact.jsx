@@ -54,7 +54,7 @@ export default function Contact() {
             href="https://github.com/Ugo25"
             icon={<Github size={18} />}
             label="GitHub Repos"
-            sub="Explore Source Code"
+            sub="Explora mis Proyectos"
           />
           <ContactLink 
             href="https://gitlab.com/Ugo25"
@@ -66,7 +66,7 @@ export default function Contact() {
             href="https://www.linkedin.com/in/hugo-acosta-a9b5aa395"
             icon={<Linkedin size={18} />}
             label="LinkedIn Network"
-            sub="Connect Professionally"
+            sub="Connecta conmigo Profesionalmente"
           />
         </div>
 
