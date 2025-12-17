@@ -1,90 +1,124 @@
+import React from 'react';
+import { 
+  Terminal, 
+  ArrowRight, 
+  Download, 
+  Github, 
+  Gitlab, 
+  Linkedin,
+  Shield,
+  Network
+} from 'lucide-react';
 import fotoPerfil from "../assets/foto-perfil.jpg";
-import Badge from "./ui/Badge";
-import IconLink from "./ui/IconLink";
-import { GitHubIcon, GitLabIcon, MailIcon } from "./ui/icons";
+import { Typewriter, Cursor } from "./Typewriter"; 
 
 export default function Hero() {
-    return (
-        <section id="inicio" className="relative flex items-center justify-center min-h-[90vh] scroll-mt-24">
-            <div className="absolute inset-0 bg-[radial-gradient(600px_200px_at_10%_10%,rgba(16,185,129,0.12),transparent),radial-gradient(500px_200px_at_90%_0%,rgba(16,185,129,0.08),transparent)]" />
+  return (
+    <section id="inicio" className="min-h-[95vh] flex items-center justify-center relative overflow-hidden text-white scroll-mt-24">
+        
+        {/* --- 1. FONDO EXCLUSIVO DEL HERO --- */}
+        {/* Grid Táctico */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#202020_1px,transparent_1px),linear-gradient(to_bottom,#202020_1px,transparent_1px)] bg-[size:40px_40px] opacity-30 pointer-events-none"></div>
+        
+        {/* Luz Ambiental (Spotlight Verde) */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none"></div>
+        <div className="absolute bottom-20 left-[-100px] w-[400px] h-[400px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none"></div>
 
-            <div className="relative mx-auto max-w-6xl px-4 py-10 md:py-20 grid md:grid-cols-2 gap-10 items-center">
-                {/* Texto */}
-                <div className="space-y-5">
-                    <h1 className="reveal text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight" style={{ transitionDelay: "0ms" }}>
-                        Desarrollador Web & Móvil • Estudiante TI
-                        <span className="block mt-2">
-                            <span className="text-emerald-400">Rumbo a CCNA → </span>
-                            <span className="text-red-500">Red Team</span>
-                        </span>
-                    </h1>
+        {/* --- 2. EL DEGRADADO MÁGICO (FADE TO BLACK) --- */}
+        {/* Este div crea la transición suave hacia el contenido de abajo */}
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#050505] pointer-events-none z-0"></div>
 
-                    <p className="reveal mt-0 text-neutral-300 max-w-prose text-base md:text-lg" style={{ transitionDelay: "120ms" }}>
-                        Construyo interfaces claras y herramientas útiles. Me especializo en
-                        <b> HTML/CSS</b> y <b>Android (Kotlin)</b>, con base en <b>C</b>, <b>C++</b> y <b>Java</b>.
-                        Profundizando en redes Cisco y ciberseguridad ofensiva.
-                    </p>
 
-                    <div className="reveal mt-0 flex flex-col sm:flex-row gap-3" style={{ transitionDelay: "240ms" }}>
-                        <a href="#proyectos" className="inline-flex justify-center rounded-xl border border-emerald-500/60 text-emerald-300 hover:bg-emerald-500/10 px-4 py-2">Ver proyectos</a>
-                        <a href="#contacto" className="inline-flex justify-center rounded-xl border border-neutral-700 hover:bg-neutral-800 px-4 py-2">Contacto</a>
-                    </div>
-
-                    <div className="reveal mt-0 flex gap-4 text-neutral-300" style={{ transitionDelay: "360ms" }}>
-                        <IconLink href="https://github.com/Ugo25" label="GitHub"><GitHubIcon className="w-6 h-6" /></IconLink>
-                        <IconLink href="https://gitlab.com/Ugo25" label="GitLab"><GitLabIcon className="w-6 h-6" /></IconLink>
-                        <IconLink href="mailto:hugoacosta7911@gmail.com" label="Email"><MailIcon className="w-6 h-6" /></IconLink>
-                    </div>
+        {/* --- CONTENIDO --- */}
+        <div className="max-w-6xl w-full mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10 py-20">
+            
+            {/* COLUMNA IZQUIERDA */}
+            <div className="space-y-8">
+                {/* Badge */}
+                <div className="reveal inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-800 bg-[#050505]/80 text-xs font-mono text-emerald-400 backdrop-blur-sm" style={{ transitionDelay: "0ms" }}>
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    System Online • Open to Work
                 </div>
 
-                {/* Imagen + Skills */}
-                <div className="md:order-none order-last flex flex-col items-center justify-center gap-6 text-center">
-                    {/* Imagen con animación + overlay anti-descarga (solo móvil) */}
-                    <div className="relative animate-fade-up delay-150 group inline-block">
-                        <div className="absolute -inset-1 bg-emerald-500/20 blur-2xl rounded-full" />
+                {/* Título */}
+                <div className="reveal min-h-[80px]" style={{ transitionDelay: "100ms" }}>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight text-neutral-100 font-mono">
+                        <Typewriter text="Hugo Acosta" start={true} speed={150} />
+                        <Cursor />
+                    </h1>
+                    <h2 className="text-xl md:text-2xl mt-4 text-neutral-400 font-normal">
+                        Full Stack Developer <span className="text-neutral-600 px-2">/</span> 
+                        <span className="text-emerald-500 font-mono">Future Red Team</span>
+                    </h2>
+                </div>
 
-                        <img
-                            src={fotoPerfil}
-                            alt="Hugo Acosta"
-                            className="protected-img relative w-40 h-40 sm:w-48 sm:h-48 md:w-60 md:h-60 rounded-full object-cover border-4 border-neutral-800 shadow-lg shadow-emerald-500/10 group-hover:shadow-emerald-500/30 transition duration-500 select-none"
-                            loading="lazy"
-                            decoding="async"
-                            width="240"
-                            height="240"
-                            draggable="false"
-                            onContextMenu={(e) => e.preventDefault()}
-                            onTouchStart={(e) => e.preventDefault()}
-                            onTouchEnd={(e) => e.preventDefault()}
-                        />
+                {/* Descripción */}
+                <p className="reveal text-neutral-400 text-lg leading-relaxed max-w-lg" style={{ transitionDelay: "200ms" }}>
+                    Construyo software eficiente mientras aprendo a romperlo. 
+                    Especializado en <strong className="text-white font-medium">Desarrollo Web & Móvil</strong>, 
+                    con un enfoque profundo en redes (CCNA) y ciberseguridad ofensiva.
+                </p>
 
-                        {/* Overlay transparente SOLO móvil (captura taps/long-press) */}
-                        <div
-                            className="absolute inset-0 rounded-full bg-transparent md:hidden"
-                            aria-hidden="true"
-                            onContextMenu={(e) => e.preventDefault()}
-                            onTouchStart={(e) => e.preventDefault()}
-                            onTouchEnd={(e) => e.preventDefault()}
-                            onMouseDown={(e) => e.preventDefault()}
-                            onDragStart={(e) => e.preventDefault()}
-                        />
-                    </div>
+                {/* Botones */}
+                <div className="reveal flex flex-wrap gap-4 pt-2" style={{ transitionDelay: "300ms" }}>
+                    <a href="#proyectos" className="group flex items-center gap-2 bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-neutral-200 transition-all">
+                        Ver Proyectos 
+                        <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform"/>
+                    </a>
+                    <a href="/cv.pdf" className="flex items-center gap-2 px-6 py-3 rounded-lg border border-neutral-800 hover:border-emerald-500/50 hover:bg-neutral-900 transition-all text-neutral-300">
+                        <Download size={18} /> Descargar CV
+                    </a>
+                </div>
 
-                    {/* Skills rápidas con animación */}
-                    <div className="relative w-full max-w-[540px] animate-fade-up delay-300">
-                        <div className="absolute -inset-1 bg-emerald-500/20 blur-2xl rounded-3xl" />
-                        <div className="relative bg-neutral-900 border border-neutral-800 rounded-3xl p-5 sm:p-6 shadow-xl">
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                                {["HTML/CSS", "Android (Kotlin)", "Java", "C", "C++", "Cisco / CCNA"].map((b) => (
-                                    <Badge key={b} label={b} />
-                                ))}
-                            </div>
-                            <div className="mt-5 text-xs sm:text-sm text-neutral-400">
-                                * VLANs, DHCP, Routing, Subnetting, Wireshark y pentesting básico.
-                            </div>
-                        </div>
-                    </div>
+                {/* Redes */}
+                <div className="reveal flex gap-6 pt-4 border-t border-neutral-800/50" style={{ transitionDelay: "400ms" }}>
+                    <SocialLink href="https://github.com/Ugo25"><Github size={20}/></SocialLink>
+                    <SocialLink href="https://gitlab.com/Ugo25"><Gitlab size={20}/></SocialLink>
+                    <SocialLink href="https://www.linkedin.com/in/hugo-acosta-a9b5aa395"><Linkedin size={20}/></SocialLink>
                 </div>
             </div>
-        </section>
-    );
+
+            {/* COLUMNA DERECHA */}
+            <div className="flex flex-col items-center justify-center relative">
+                <div className="relative w-64 h-64 md:w-80 md:h-80 group animate-fade-up delay-150">
+                     <div className="absolute inset-[-10px] border border-dashed border-neutral-800 rounded-full animate-[spin_20s_linear_infinite]"></div>
+                     <img 
+                        src={fotoPerfil} 
+                        alt="Hugo Acosta" 
+                        className="w-full h-full object-cover rounded-full border-4 border-[#0a0a0a] shadow-2xl relative z-10 transition-all duration-500 protected" 
+                        draggable="false"
+                        onContextMenu={(e) => e.preventDefault()}
+                     />
+                     <div className="absolute bottom-2 right-4 bg-neutral-900 border border-neutral-700 p-2 rounded-full z-20 shadow-lg">
+                        <Terminal size={20} className="text-emerald-500" />
+                     </div>
+                </div>
+
+                <div className="mt-10 grid grid-cols-2 gap-3 w-full max-w-sm animate-fade-up delay-300">
+                    <SkillBadge icon={<Terminal size={14}/>} label="Java / Kotlin" />
+                    <SkillBadge icon={<Shield size={14}/>} label="Cybersecurity" />
+                    <SkillBadge icon={<Network size={14}/>} label="CCNA / Networks" />
+                    <SkillBadge icon={<ArrowRight size={14}/>} label="HTML / CSS" />
+                </div>
+            </div>
+        </div>
+    </section>
+  );
 }
+
+// Helpers
+const SocialLink = ({ href, children }) => (
+    <a href={href} target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-emerald-400 transition-colors">
+        {children}
+    </a>
+);
+
+const SkillBadge = ({ icon, label }) => (
+    <div className="flex items-center gap-3 px-4 py-2 bg-neutral-900/50 border border-neutral-800 rounded-lg text-sm text-neutral-300 hover:border-emerald-500/30 transition-colors backdrop-blur-sm">
+        <span className="text-emerald-500">{icon}</span>
+        {label}
+    </div>
+);

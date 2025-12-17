@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-
-
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -10,9 +8,8 @@ import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-
 export default function App() {
-  // Efecto reveal global (aplica a elementos con clase .reveal)
+  // Efecto reveal global
   useEffect(() => {
     const els = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver(
@@ -27,9 +24,9 @@ export default function App() {
     return () => io.disconnect();
   }, []);
 
-
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 font-sans">
+    // Color base negro puro (#050505) para todo el sitio
+    <div className="min-h-screen bg-[#050505] text-neutral-100 font-sans selection:bg-emerald-500/30 selection:text-emerald-200">
       <Navbar />
       <Hero />
       <About />

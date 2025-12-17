@@ -1,0 +1,54 @@
+[
+    {
+        "name": "SRV-CCNA-CORE",
+        "title": "CCNA: Switching, Routing & Wireless Essentials",
+        "img": "badgeSwitching",
+        "url": "https://www.credly.com/badges/07a42402-760d-4310-b4ea-39a0354d6169/public_url",
+        "date": "2025-04",
+        "status": "ONLINE",
+        "leds": [
+            "bg-green-500",
+            "bg-green-500",
+            "bg-emerald-400"
+        ]
+    },
+    {
+        "name": "SRV-NET-INTRO",
+        "title": "CCNA: Introduction to Networks",
+        "img": "badgeIntro",
+        "url": "https://www.credly.com/badges/856b0349-bbff-4697-83e9-a33d35cebf56/public_url",
+        "date": "2024-12",
+        "status": "ACTIVE",
+        "leds": [
+            "bg-green-500",
+            "bg-yellow-500",
+            "bg-green-500"
+        ]
+    },
+    {
+        "name": "BLADE-TECH-PATH",
+        "title": "Network Technician Career Path",
+        "img": "badgeCareer",
+        "url": "https://www.credly.com/badges/62802231-51ee-4ffc-8d02-e8432af3ccb9/public_url",
+        "date": "2025-04",
+        "status": "READY",
+        "leds": [
+            "bg-blue-500",
+            "bg-blue-500",
+            "bg-green-500"
+        ]
+    },
+    {
+        "name": "NODE-LEARN-25",
+        "title": "Networking Academy Learn-A-Thon",
+        "img": "badgeLearnathon",
+        "url": "https://www.credly.com/badges/5d386eca-b7d5-488d-b5d3-a76bc1bbc02d/public_url",
+        "date": "2025-06",
+        "status": "IDLE",
+        "leds": [
+            "bg-purple-500",
+            "bg-green-500",
+            "bg-neutral-600"
+        ]
+    }
+]
