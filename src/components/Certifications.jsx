@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Server, Power, Activity, HardDrive } from 'lucide-react';
 import certificationsData from '../data/certifications.json';
 
-// Importa tus imágenes
 import badgeSwitching from "../assets/badges/CCNA.png";
 import badgeIntro from "../assets/badges/Introredes.png";
 import badgeCareer from "../assets/badges/carreraentecnico.png";
@@ -19,19 +18,17 @@ export default function Certifications() {
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
-    // Procesamos datos
     const serversData = certificationsData.map((server) => ({
         ...server,
         img: badgesMap[server.img]
     }));
 
-    // Detectar cuando la sección es visible
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                    observer.disconnect(); // Solo animar una vez
+                    observer.disconnect(); 
                 }
             },
             { threshold: 0.1 } 
@@ -49,7 +46,7 @@ export default function Certifications() {
                 <div className={`flex flex-col md:flex-row md:items-center justify-between mb-8 border-b-2 border-neutral-800 pb-4 md:pb-2 gap-4 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
                     <h2 className="text-2xl font-bold text-neutral-200 flex items-center gap-3">
                         <Server className="text-emerald-500" />
-                        Infrastructure Rack 01
+                        Certificados Rack 01
                     </h2>
                     <div className="flex gap-4 text-xs text-neutral-500 bg-neutral-900/50 p-2 rounded md:bg-transparent md:p-0">
                         <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div> SYSTEM OK</span>
@@ -74,12 +71,10 @@ export default function Certifications() {
                         {serversData.map((server, index) => (
                             <div 
                                 key={server.name}
-                                // AQUÍ ESTÁ LA ANIMACIÓN ESPECÍFICA:
-                                // translate-x-0 (posición original) vs -translate-x-12 (fuera a la izquierda)
                                 className={`transform transition-all duration-700 ease-out ${
                                     isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
                                 }`}
-                                style={{ transitionDelay: `${index * 150}ms` }} // Retraso en escalera
+                                style={{ transitionDelay: `${index * 150}ms` }}
                             >
                                 <ServerUnit server={server} index={index} />
                             </div>
@@ -99,7 +94,6 @@ export default function Certifications() {
     );
 }
 
-// --- SUB-COMPONENTE: Unidad de Servidor ---
 const ServerUnit = ({ server }) => {
     return (
         <a 

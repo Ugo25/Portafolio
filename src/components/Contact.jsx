@@ -13,7 +13,7 @@ export default function Contact() {
   return (
     <section id="contacto" className="mx-auto max-w-5xl px-4 py-24 scroll-mt-24 font-mono">
       
-      {/* HEADER TIPO CONSOLA (Animación: 0ms) */}
+      {/* HEADER TIPO CONSOLA */}
       <div className="reveal flex items-center gap-2 text-emerald-500 mb-12 border-b border-neutral-800 pb-4" style={{ transitionDelay: "0ms" }}>
         <Terminal size={18} />
         <span className="text-sm tracking-wide">root@portfolio:~/open-channels#</span>
@@ -24,18 +24,17 @@ export default function Contact() {
         
         {/* COLUMNA IZQUIERDA: MENSAJE */}
         <div className="space-y-6">
-          {/* Título (Animación: 100ms) */}
+          {/* Título */}
           <h2 className="reveal text-3xl md:text-4xl font-bold text-white" style={{ transitionDelay: "100ms" }}>
-            Contact <span className="text-emerald-500">Me</span>
+            Contacta <span className="text-emerald-500">Me</span>
           </h2>
           
-          {/* Descripción (Animación: 200ms) */}
+          {/* Descripción */}
           <p className="reveal text-neutral-400 leading-relaxed text-sm md:text-base" style={{ transitionDelay: "200ms" }}>
-            Actualmente estoy disponible para colaboraciones en desarrollo y seguridad.
-            Si quieres hablar de código, vulnerabilidades o proyectos, establece conexión.
+            Actualmente estoy disponible para colaboraciones en desarrollo y seguridad, vulnerabilidades o proyectos, Contactame.
           </p>
 
-          {/* Indicador de Estado (Animación: 300ms) */}
+          {/* Indicador de Estado */}
           <div className="reveal inline-flex items-center gap-3 px-4 py-2 bg-neutral-900/50 rounded border border-neutral-800 text-xs text-neutral-500" style={{ transitionDelay: "300ms" }}>
             <Signal size={14} className="text-emerald-500" />
             <span>Signal Strength: <span className="text-white">STRONG</span></span>
@@ -43,7 +42,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* COLUMNA DERECHA: ENLACES (Animación: 400ms) */}
+        {/* COLUMNA DERECHA: ENLACES */}
         <div className="reveal flex flex-col gap-3" style={{ transitionDelay: "400ms" }}>
           <ContactLink 
             href="mailto:hugoacosta7911@gmail.com"
@@ -76,7 +75,6 @@ export default function Contact() {
   );
 }
 
-// Componente de Enlace (Tarjeta Interactiva)
 const ContactLink = ({ href, icon, label, sub }) => (
   <a 
     href={href} 
